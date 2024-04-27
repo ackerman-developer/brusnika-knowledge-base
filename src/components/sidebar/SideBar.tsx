@@ -3,7 +3,7 @@ import styles from "./SideBar.module.scss";
 const SideBar = () => {
   return(
     <div className={styles.sidebar}>
-      SideBar
+      <h1>Содержание</h1>
     </div>
   )
 }

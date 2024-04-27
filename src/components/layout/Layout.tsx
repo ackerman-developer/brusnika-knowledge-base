@@ -12,7 +12,8 @@ const Layout = () => {
         <SideBar />
       </div>
       <div className={styles.header}>
-        <Header />
+        <Header/>
+        <hr></hr>
       </div>
       <div className={styles.content}>
         <Outlet />

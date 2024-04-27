@@ -2,5 +2,12 @@
   background-color: #FFFFFF;
   min-height: calc(100vh - 66px);
   margin-left: 300px;
-  padding: 20px;
+  padding: 50px;
+}
+
+.header{
+  hr{
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);;
+  }
 }
