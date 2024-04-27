@@ -1,9 +1,9 @@
-import styles from "./Sidebar.module.scss";
+import styles from "./SideBar.module.scss";
 
 const SideBar = () => {
   return(
     <div className={styles.sidebar}>
-
+      SideBar
     </div>
   )
 }
