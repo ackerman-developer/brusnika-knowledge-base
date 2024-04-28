@@ -1,7 +1,11 @@
-import {Suspense} from "react";
-import {Route, Routes} from "react-router-dom";
-import {Layout} from "@/components";
-import {MainPage, NotFoundPage} from "@/pages";
+import { Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Layout } from "@/components";
+import {
+  MainPage,
+  NotFoundPage,
+  Artifacts
+} from "@/pages";
 
 const AppRouter = () => {
   return (
@@ -9,6 +13,7 @@ const AppRouter = () => {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route path='/' element={<MainPage />}/>
+          <Route path='/artifact' element={<Artifacts />}/>
           <Route path='*' element={<NotFoundPage />}/>
         </Route>
       </Routes>
