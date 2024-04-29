@@ -12,14 +12,13 @@
 
 .content{
   grid-area: content;
-  padding: 50px;
+  padding: 50px 80px;
 }
 
 .header{
   grid-area: header;
-  background-color: #FFFFFF;
-  padding: 20px 0;
   hr{
+    margin-top: 20px;
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.6);;
   }
