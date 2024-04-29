@@ -1,3 +1,5 @@
+@import "@/app/styles/global.scss";
+
 .sidebar {
   background: #3b4658;
   position: fixed;
@@ -10,9 +12,18 @@
   transition: width 0.3s ease;
   width: 300px;
   overflow: hidden;
+
   h1 {
     font-weight: 300;
     font-size: 25px;
+    color: #fff;
+  }
+
+  a {
+    @include flex-center;
+    gap: 20px;
+    font-weight: 400;
+    font-size: 20px;
     color: #fff;
   }
 }

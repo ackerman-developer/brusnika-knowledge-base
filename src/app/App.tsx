@@ -1,9 +1,9 @@
-import {AppRouter} from "@/providers";
+import AppRouter from "@/app/router/AppRouter.tsx";
 
 function App() {
   return (
     <>
-      <AppRouter />
+      <AppRouter/>
     </>
   )
 }
