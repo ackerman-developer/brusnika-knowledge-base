@@ -1,0 +1,24 @@
+@import "@/app/styles/global.scss";
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 100px;
+  grid-row-gap: 100px;
+}
+
+.component {
+  @include flex-column;
+  gap: 20px;
+  h1 {
+    font-weight: 400;
+    font-size: 35px;
+    color: #000;
+  }
+
+  a {
+    font-weight: 400;
+    font-size: 26px;
+    color: #616161;
+  }
+}
