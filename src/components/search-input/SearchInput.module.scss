@@ -1,8 +1,17 @@
 .search_input {
   border: 2.92px solid rgba(20, 25, 26, 0.12);
   border-radius: 12px;
+  background-image: url("@/assets/images/search.svg");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: left 10px center;
   width: 321px;
   height: 45px;
   outline: none;
-  padding: 11px 23px;
+  padding: 11px 45px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 145%;
+  letter-spacing: 0.01em;
+  color: #8a8c8c;
 }

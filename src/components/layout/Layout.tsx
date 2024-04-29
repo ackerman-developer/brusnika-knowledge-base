@@ -7,18 +7,18 @@ import {
 
 const Layout = () => {
   return(
-    <>
-      <div className={styles.side}>
-        <SideBar />
-      </div>
+    <div className={styles.layout}>
       <div className={styles.header}>
         <Header/>
         <hr></hr>
       </div>
       <div className={styles.content}>
-        <Outlet />
+        <Outlet/>
       </div>
-    </>
+      <div className={styles.aside}>
+        <SideBar/>
+      </div>
+    </div>
   )
 }
 

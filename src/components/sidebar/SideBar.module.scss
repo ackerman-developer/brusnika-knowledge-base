@@ -18,11 +18,29 @@
     color: #fff;
   }
 
-  a {
-    @include flex-center;
+  .main_list {
+    @include flex-column;
     gap: 20px;
+  }
+
+  .secondary_list {
+    margin-top: 10px;
+    @include flex-column;
+    gap: 10px;
+  }
+
+  .main_link {
+    @include flex-center;
+    gap: 15px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .secondary_link {
+    margin-left: 49px;
+    font-weight: 300;
+    font-size: 18px;
     color: #fff;
   }
 }

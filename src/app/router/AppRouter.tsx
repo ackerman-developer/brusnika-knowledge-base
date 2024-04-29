@@ -4,7 +4,8 @@ import { Layout } from "@/components";
 import {
   MainPage,
   NotFoundPage,
-  Artifacts
+  Artifacts,
+  DesingComponents
 } from "@/pages";
 import { AppRoute } from "@/app/constants/AppRoute.ts";
 
@@ -20,6 +21,10 @@ const AppRouter = () => {
           <Route
             path={AppRoute.ARTIFACT}
             element={<Artifacts />}
+          />
+          <Route
+            path={AppRoute.DESING_COMPONENTS}
+            element={<DesingComponents />}
           />
           <Route
             path={AppRoute.NOT_FOUND}

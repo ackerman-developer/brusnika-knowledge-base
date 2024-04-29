@@ -1,12 +1,17 @@
 .header {
   display: flex;
   gap: 40px;
+  width: 90%;
   height: 65px;
-  margin-left: 300px;
   padding: 50px;
+
   h1 {
     font-weight: 400;
     font-size: 30px;
     color: #000;
+  }
+
+  .search {
+    margin-left: auto;
   }
 }
