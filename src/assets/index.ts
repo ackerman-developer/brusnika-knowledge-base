@@ -3,6 +3,7 @@ import DesingIcon from './images/desing.svg?react';
 import TemplateIcon from './images/template.svg?react';
 import AddressIcon from './images/address.svg?react';
 import SearchIcon from './images/search.svg?react';
+import ArrowDownIcon from './images/arrow-down.svg?react';
 
 export {
   HomeIcon,
@@ -10,4 +11,5 @@ export {
   TemplateIcon,
   AddressIcon,
   SearchIcon,
+  ArrowDownIcon
 }

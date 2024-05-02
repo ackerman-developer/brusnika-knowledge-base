@@ -1,5 +1,6 @@
 import styles from "./MainPage.module.scss";
 import { Link } from "react-router-dom";
+import { AppRoute } from "@/app/constants/AppRoute.ts";
 
 const MainPage = () => {
   return(
@@ -28,7 +29,7 @@ const MainPage = () => {
         <Link to={'/'}>Документы</Link>
         <Link to={'/'}>Регламенты</Link>
         <Link to={'/'}>Шаблоны</Link>
-        <Link to={'/'}>Часто задаваемые вопросы</Link>
+        <Link to={AppRoute.FAQ}>Часто задаваемые вопросы</Link>
       </div>
     </div>
   )
