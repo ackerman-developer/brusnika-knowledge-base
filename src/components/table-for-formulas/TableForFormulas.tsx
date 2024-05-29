@@ -1,9 +1,18 @@
 import styles from './TableForFormulas.module.scss'
-import Latex from 'react-latex-next';
 import 'katex/dist/katex.min.css';
+import Latex from 'react-latex-next';
+import { useAppDispatch, useAppSelector } from '@/hooks/redux-hooks';
+import { getFormulas } from '@/store/formulas-data/formulas-data.selectors';
+import { useEffect } from 'react';
+import { fetchFormulas } from '@/store/formulas-data/api-action';
 
 const TableForFormulas = () => {
-  const formula = `\\( \\frac{d}{dx}\\int_{a}^{x}f(t)dt = f(x) \\)`
+  const dispatch = useAppDispatch()
+  const formulas = useAppSelector(getFormulas)
+
+  useEffect(() => {
+    dispatch(fetchFormulas())
+  }, [dispatch])
 
   return (
     <>
@@ -16,26 +25,13 @@ const TableForFormulas = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Для расчета бетона</td>
-            <td><Latex>{formula}</Latex></td>
-            <td>Краткое описание формулы для расчета бетона...</td>
-          </tr>
-          <tr>
-            <td>Для расчета бетона</td>
-            <td><Latex>{formula}</Latex></td>
-            <td>Краткое описание формулы для расчета бетона...</td>
-          </tr>
-          <tr>
-            <td>Для расчета бетона</td>
-            <td><Latex>{formula}</Latex></td>
-            <td>Краткое описание формулы для расчета бетона...</td>
-          </tr>
-          <tr>
-            <td>Для расчета бетона</td>
-            <td><Latex>{formula}</Latex></td>
-            <td>Краткое описание формулы для расчета бетона...</td>
-          </tr>
+          {formulas.map((item, index) => (
+            <tr key={index}>
+              <td>{item.name}</td>
+              <td><Latex>{`\\( ${item.content} \\)`}</Latex></td>
+              <td>{item.description}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>

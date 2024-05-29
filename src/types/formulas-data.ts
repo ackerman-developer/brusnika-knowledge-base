@@ -1,5 +1,5 @@
 export type FormulasData = {
-  id: string
+  id: number
   name: string
   content: string
   description: string
