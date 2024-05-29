@@ -4,6 +4,15 @@
     "title": "Пример презентации",
     "description": "Описание примера презентации",
     "dateUpdate": "2024-05-29",
+    "fileName": "artur-talant.pptx",
+    "path": "/путь/к/презентации"
+  },
+  {
+    "id": 2,
+    "title": "Талант",
+    "description": "Полный талант как Серега Пират",
+    "dateUpdate": "2024-05-22",
+    "fileName": "am-serega.docx",
     "path": "/путь/к/презентации"
   }
 ]

@@ -4,6 +4,7 @@ import TemplateIcon from './images/template.svg?react';
 import AddressIcon from './images/address.svg?react';
 import SearchIcon from './images/search.svg?react';
 import ArrowDownIcon from './images/arrow-down.svg?react';
+import DownloadFileIcon from './images/download-file.svg?react'
 
 export {
   HomeIcon,
@@ -11,5 +12,6 @@ export {
   TemplateIcon,
   AddressIcon,
   SearchIcon,
-  ArrowDownIcon
+  ArrowDownIcon,
+  DownloadFileIcon
 }

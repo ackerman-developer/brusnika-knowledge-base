@@ -5,6 +5,7 @@ import SearchInput from "./search-input/SearchInput.tsx";
 import Question from "./question/Question";
 import FormArtifact from "./form-artifact/FormArtifact.tsx";
 import TableForFormulas from "./table-for-formulas/TableForFormulas.tsx";
+import TableForArtifacts from "./table-for-artifacts/TableForArtifacts.tsx";
 
 export {
   Layout,
@@ -13,5 +14,6 @@ export {
   SearchInput,
   Question,
   FormArtifact,
-  TableForFormulas
+  TableForFormulas,
+  TableForArtifacts
 }

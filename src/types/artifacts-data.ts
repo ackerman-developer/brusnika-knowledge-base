@@ -3,6 +3,7 @@ export type ArtifactData = {
   title: string
   description: string
   dateUpdate: string
+  fileName: string
   path: string
 }
 

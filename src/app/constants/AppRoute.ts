@@ -7,7 +7,7 @@ export enum AppRoute {
   DESING_TYPOGRAPHY = '/typography',
   TEMPLATES = '/templates',
   ADDRESS = '/address',
-  ARTIFACT = '/artifact',
+  ARTIFACT = '/documents',
   FAQ = '/questions',
   FORMULAS = '/formulas'
 }
