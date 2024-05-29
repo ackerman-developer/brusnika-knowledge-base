@@ -13,5 +13,5 @@ export {
   DesingComponents,
   FAQ,
   Formulas,
-  AboutArtifact
+  AboutArtifact,
 }

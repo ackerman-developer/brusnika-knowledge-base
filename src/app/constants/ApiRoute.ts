@@ -1,7 +1,5 @@
 export enum APIRoute {
-  artifact = '/artifact',
+  artifact = '/Knowledge',
+  formule = '/Formule'
 }
 
-export enum NameSpace {
-  Artifact = 'ARTIFACT'
-}

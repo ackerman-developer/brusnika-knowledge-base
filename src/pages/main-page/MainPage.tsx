@@ -1,8 +1,12 @@
 import styles from "./MainPage.module.scss";
 import { Link } from "react-router-dom";
 import { AppRoute } from "@/app/constants/AppRoute.ts";
+import { FormArtifact, Modal } from "@/components";
+import { useState } from "react";
 
 const MainPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return(
     <div className={styles.content}>
       <div className={styles.component}>
@@ -19,9 +23,8 @@ const MainPage = () => {
       </div>
       <div className={styles.component}>
         <h1>Создать</h1>
+        <button onClick={() => setIsModalOpen(true)}>Документ</button>
         <Link to={'/'}>Таблица</Link>
-        <Link to={'/'}>Презентация</Link>
-        <Link to={'/'}>Отчет</Link>
         <Link to={'/'}>Формула</Link>
       </div>
       <div className={styles.component}>
@@ -31,6 +34,10 @@ const MainPage = () => {
         <Link to={'/'}>Шаблоны</Link>
         <Link to={AppRoute.FAQ}>Часто задаваемые вопросы</Link>
       </div>
+
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <FormArtifact onClose={() => setIsModalOpen(false)} />
+      </Modal>
     </div>
   )
 }

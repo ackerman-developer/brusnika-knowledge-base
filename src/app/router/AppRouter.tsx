@@ -8,7 +8,7 @@ import {
   DesingComponents,
   FAQ,
   Formulas,
-  AboutArtifact
+  AboutArtifact,
 } from "@/pages";
 import { AppRoute } from "@/app/constants/AppRoute.ts";
 

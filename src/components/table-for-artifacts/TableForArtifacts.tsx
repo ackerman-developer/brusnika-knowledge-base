@@ -42,7 +42,7 @@ const TableForArtifacts = () => {
               <td>{item.description}</td>
               <td>{item.dateUpdate}</td>
               <td>
-                <a href={`http://yourserver.com/files/${item.path}`} download onClick={handleDownloadClick}>
+                <a href={`https://158.160.97.74/${item.path}`} download onClick={handleDownloadClick}>
                   <button className={styles.downloadButton}>
                     <DownloadFileIcon />
                     {item.fileName}

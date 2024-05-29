@@ -6,6 +6,7 @@ import Question from "./question/Question";
 import FormArtifact from "./form-artifact/FormArtifact.tsx";
 import TableForFormulas from "./table-for-formulas/TableForFormulas.tsx";
 import TableForArtifacts from "./table-for-artifacts/TableForArtifacts.tsx";
+import Modal from "./modal/Modal.tsx";
 
 export {
   Layout,
@@ -15,5 +16,6 @@ export {
   Question,
   FormArtifact,
   TableForFormulas,
-  TableForArtifacts
+  TableForArtifacts,
+  Modal
 }
