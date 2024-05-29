@@ -20,7 +20,7 @@ export const fetchArtifacts = createAsyncThunk<ArtifactData[], void, {
   // },
 )
 
-export const fetchArtifactByID = createAsyncThunk<ArtifactData | undefined, { id: number }, {
+export const fetchArtifactByID = createAsyncThunk<ArtifactData | undefined, { id: string }, {
   dispatch: AppDispatch
   state: RootState
 }>(

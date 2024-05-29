@@ -16,6 +16,14 @@ const TableForArtifacts = () => {
     dispatch(fetchArtifacts())
   }, [dispatch])
 
+  const handleRowClick = (id: string) => {
+    navigate(`${AppRoute.ABOUT_ARTIFACT}/${id}`)
+  }
+
+  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.stopPropagation()
+  }
+
   return (
     <>
       <table className={styles.table}>
@@ -29,12 +37,12 @@ const TableForArtifacts = () => {
         </thead>
         <tbody>
           {artifacts.map((item, index) => (
-            <tr key={index} onClick={() => navigate(`${AppRoute.ABOUT_ARTIFACT}/${item.id}`)}>
+            <tr key={index} onClick={() => handleRowClick(item.id)}>
               <td>{item.title}</td>
               <td>{item.description}</td>
               <td>{item.dateUpdate}</td>
               <td>
-                <a href={`http://yourserver.com/files/${item.path}`} download>
+                <a href={`http://yourserver.com/files/${item.path}`} download onClick={handleDownloadClick}>
                   <button className={styles.downloadButton}>
                     <DownloadFileIcon />
                     {item.fileName}

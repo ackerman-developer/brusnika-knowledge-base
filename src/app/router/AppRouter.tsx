@@ -26,7 +26,7 @@ const AppRouter = () => {
             element={<Artifacts />}
           />
           <Route
-            path={AppRoute.ABOUT_ARTIFACT}
+            path={`${AppRoute.ABOUT_ARTIFACT}/:id`}
             element={<AboutArtifact />}
           />
           <Route
