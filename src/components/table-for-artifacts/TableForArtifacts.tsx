@@ -4,10 +4,13 @@ import { getArtifacts } from "@/store/artifacts-data/artifacts-data.selectors"
 import { fetchArtifacts } from "@/store/artifacts-data/api-action"
 import { useEffect } from "react"
 import { DownloadFileIcon } from "@/assets"
+import { useNavigate } from "react-router-dom"
+import { AppRoute } from "@/app/constants/AppRoute"
 
 const TableForArtifacts = () => {
   const dispatch = useAppDispatch()
   const artifacts = useAppSelector(getArtifacts)
+  const navigate = useNavigate()
 
   useEffect(() => {
     dispatch(fetchArtifacts())
@@ -26,7 +29,7 @@ const TableForArtifacts = () => {
         </thead>
         <tbody>
           {artifacts.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} onClick={() => navigate(`${AppRoute.ABOUT_ARTIFACT}/${item.id}`)}>
               <td>{item.title}</td>
               <td>{item.description}</td>
               <td>{item.dateUpdate}</td>

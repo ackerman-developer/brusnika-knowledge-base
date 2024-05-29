@@ -1,14 +1,14 @@
 [
   {
-    "id": 1,
+    "id": "3123",
     "title": "Пример презентации",
     "description": "Описание примера презентации",
     "dateUpdate": "2024-05-29",
     "fileName": "artur-talant.pptx",
-    "path": "/путь/к/презентации"
+    "path": "https://mail.google.com/mail/u/0/#inbox/FMfcgzGxTPHJbKHBVRcDWrNTbxBllGrQ?projector=1&messagePartId=0.1"
   },
   {
-    "id": 2,
+    "id": "213123",
     "title": "Талант",
     "description": "Полный талант как Серега Пират",
     "dateUpdate": "2024-05-22",

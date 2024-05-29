@@ -8,6 +8,7 @@ export enum AppRoute {
   TEMPLATES = '/templates',
   ADDRESS = '/address',
   ARTIFACT = '/documents',
+  ABOUT_ARTIFACT = '/document',
   FAQ = '/questions',
   FORMULAS = '/formulas'
 }

@@ -1,5 +1,5 @@
 export type ArtifactData = {
-  id: number
+  id: string
   title: string
   description: string
   dateUpdate: string
@@ -8,7 +8,9 @@ export type ArtifactData = {
 }
 
 export type ArtifactState = {
-  artifacts: ArtifactData[],
+  artifacts: ArtifactData[]
+  artifact: ArtifactData | undefined
   isArtfactsDataLoading: boolean
+  isArtfactDataLoading: boolean
 }
 

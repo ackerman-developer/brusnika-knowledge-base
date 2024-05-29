@@ -4,6 +4,7 @@ import Artifacts from "./artifacts/Artifacts";
 import DesingComponents from "./desing/desing-components/DesingComponents.tsx";
 import FAQ from "./faq/FAQ.tsx";
 import Formulas from "./formulas/Formulas.tsx";
+import AboutArtifact from "./about-artifact/AboutArtifact.tsx";
 
 export {
   MainPage,
@@ -11,5 +12,6 @@ export {
   Artifacts,
   DesingComponents,
   FAQ,
-  Formulas
+  Formulas,
+  AboutArtifact
 }

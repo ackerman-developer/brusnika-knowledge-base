@@ -7,7 +7,8 @@ import {
   Artifacts,
   DesingComponents,
   FAQ,
-  Formulas
+  Formulas,
+  AboutArtifact
 } from "@/pages";
 import { AppRoute } from "@/app/constants/AppRoute.ts";
 
@@ -23,6 +24,10 @@ const AppRouter = () => {
           <Route
             path={AppRoute.ARTIFACT}
             element={<Artifacts />}
+          />
+          <Route
+            path={AppRoute.ABOUT_ARTIFACT}
+            element={<AboutArtifact />}
           />
           <Route
             path={AppRoute.DESING_COMPONENTS}
