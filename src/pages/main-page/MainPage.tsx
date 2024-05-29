@@ -1,7 +1,6 @@
 import styles from "./MainPage.module.scss";
 import { Link } from "react-router-dom";
 import { AppRoute } from "@/app/constants/AppRoute.ts";
-import { FormArtifact } from "@/components";
 
 const MainPage = () => {
   return(
@@ -32,7 +31,6 @@ const MainPage = () => {
         <Link to={'/'}>Шаблоны</Link>
         <Link to={AppRoute.FAQ}>Часто задаваемые вопросы</Link>
       </div>
-      <FormArtifact />
     </div>
   )
 }
