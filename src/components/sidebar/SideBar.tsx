@@ -36,7 +36,7 @@ const SideBar = () => {
             <li><Link to={AppRoute.MAIN} className={styles.secondary_link}>Презентации</Link></li>
             <li><Link to={AppRoute.MAIN} className={styles.secondary_link}>Таблицы</Link></li>
             <li><Link to={AppRoute.MAIN} className={styles.secondary_link}>Отчеты</Link></li>
-            <li><Link to={AppRoute.MAIN} className={styles.secondary_link}>Формулы</Link></li>
+            <li><Link to={AppRoute.FORMULAS} className={styles.secondary_link}>Формулы</Link></li>
           </ol>
         </li>
         <li>
