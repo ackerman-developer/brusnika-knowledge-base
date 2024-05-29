@@ -3,11 +3,13 @@ import SideBar from "./sidebar/SideBar";
 import Header from "./header/Header"
 import SearchInput from "./search-input/SearchInput.tsx";
 import Question from "./question/Question";
+import FormArtifact from "./form-artifact/FormArtifact.tsx";
 
 export {
   Layout,
   SideBar,
   Header,
   SearchInput,
-  Question
+  Question,
+  FormArtifact
 }

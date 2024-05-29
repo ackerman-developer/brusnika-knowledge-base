@@ -26,6 +26,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "@types/react-mathjax2.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
