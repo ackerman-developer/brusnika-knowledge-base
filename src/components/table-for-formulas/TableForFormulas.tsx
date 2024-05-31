@@ -31,7 +31,7 @@ const TableForFormulas = () => {
           </thead>
           <tbody>
             {formulas.map((item, index) => (
-              <tr key={index}>
+              <tr key={index} style={{cursor: "pointer"}}>
                 <td>{item.name}</td>
                 <td><Latex>{`\\( ${item.content} \\)`}</Latex></td>
                 <td>{item.description}</td>

@@ -7,12 +7,14 @@ import { DownloadFileIcon } from "@/assets"
 import { useNavigate } from "react-router-dom"
 import { AppRoute } from "@/app/constants/AppRoute"
 import Spinner from "../spinner/Spinner"
+import useFormattedDate from "@/hooks/useFormattedDate"
 
 const TableForArtifacts = () => {
   const dispatch = useAppDispatch()
   const artifacts = useAppSelector(getArtifacts)
   const artifactsLoading = useAppSelector(getArtifactsDataLoadingStatus)
   const navigate = useNavigate()
+  const { formatDate } = useFormattedDate()
 
   useEffect(() => {
     dispatch(fetchArtifacts())
@@ -22,16 +24,18 @@ const TableForArtifacts = () => {
     navigate(`${AppRoute.ABOUT_ARTIFACT}/${id}`)
   }
 
-  const handleDownloadClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, path: string) => {
+  const handleDownloadClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, src: string) => {
     e.stopPropagation()
-    if (!path) {
+    if (!src) {
       return
     }
     const link = document.createElement('a')
-    link.href = `${import.meta.env.VITE_API_BASE_URL}/${path}`
+    link.href = `${import.meta.env.VITE_API_STATIC_FILE}/${src}`
     link.download = ''
     link.click()
   }
+
+
 
   return (
     <>
@@ -49,14 +53,14 @@ const TableForArtifacts = () => {
           </thead>
           <tbody>
             {artifacts.map((item, index) => (
-              <tr key={index} onClick={() => handleRowClick(item.id)}>
+              <tr key={index} onClick={() => handleRowClick(item.id)} style={{cursor: "pointer"}}>
                 <td>{item.title}</td>
                 <td>{item.description}</td>
-                <td>{item.dateUpdate}</td>
+                <td>{formatDate(item.dateUpdated)}</td>
                 <td>
                     <button
                       className={styles.downloadButton}
-                      onClick={(e) => handleDownloadClick(e, item.path)}
+                      onClick={(e) => handleDownloadClick(e, item.src)}
                     >
                       <DownloadFileIcon />
                       {item.fileName}

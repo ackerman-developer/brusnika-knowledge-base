@@ -2,9 +2,9 @@ export type ArtifactData = {
   id: string
   title: string
   description: string
-  dateUpdate: string
+  dateUpdated: string
   fileName: string
-  path: string
+  src: string
 }
 
 export type ArtifactState = {

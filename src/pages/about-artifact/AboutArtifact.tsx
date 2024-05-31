@@ -15,7 +15,7 @@ const AboutArtifact = () => {
         <>
           <p>{artifact.title}</p>
           <p>{artifact.description}</p>
-          <p>{artifact.dateUpdate}</p>
+          <p>{artifact.dateUpdated}</p>
         </>
       ) : (
         <p>Документ не найден</p>
