@@ -1,16 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ArtifactData } from "@/types/artifacts-data.ts";
+import { ArtifactData, UploadArtifactData } from "@/types/artifacts-data.ts";
 import { AppDispatch, RootState } from "@/types/redux-types.ts";
 import { AxiosInstance } from "axios";
 import { APIRoute } from "@/app/constants/ApiRoute.ts";
 
-export interface IPostArtifactData {
-  title: string
-  description: string
-  file: File
-}
 
-export const createArtifact = createAsyncThunk<IPostArtifactData, IPostArtifactData, {
+export const createArtifact = createAsyncThunk<UploadArtifactData, UploadArtifactData, {
   dispatch: AppDispatch
   state: RootState
   extra: AxiosInstance
@@ -20,14 +15,10 @@ export const createArtifact = createAsyncThunk<IPostArtifactData, IPostArtifactD
     const formData = new FormData()
     formData.append('title', postData.title)
     formData.append('description', postData.description)
-    formData.append('file', postData.file)
+    formData.append('content', postData.content)
 
-    const { data } = await api.post<IPostArtifactData>(APIRoute.artifact, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
-    return data;
+    const { data } = await api.post<UploadArtifactData>(APIRoute.artifact, formData)
+    return data
   },
 )
 

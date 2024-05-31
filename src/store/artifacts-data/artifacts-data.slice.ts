@@ -1,10 +1,11 @@
 import { ArtifactState } from "@/types/artifacts-data";
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchArtifactByID, fetchArtifacts } from "./api-action";
+import { createArtifact, fetchArtifactByID, fetchArtifacts } from "./api-action";
 
 const initialState: ArtifactState = {
   artifacts: [],
   artifact: undefined,
+  uploadArtifact: [],
   isArtfactsDataLoading: false,
   isArtfactDataLoading: false
 }
@@ -15,6 +16,9 @@ export const artifactsData = createSlice({
   reducers: {},
   extraReducers(builder) {
     builder
+      .addCase(createArtifact.fulfilled, (state, action) => {
+        state.uploadArtifact.push(action.payload)
+      })
       .addCase(fetchArtifacts.pending, (state) => {
         state.isArtfactsDataLoading = true
       })

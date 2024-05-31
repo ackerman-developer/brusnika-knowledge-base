@@ -1,12 +1,13 @@
 import React, { FC, useState } from "react";
 import styles from "./FormArtifact.module.scss";
 import { useAppDispatch } from "@/hooks/redux-hooks";
-import { createArtifact, IPostArtifactData } from "@/store/artifacts-data/api-action";
+import { createArtifact } from "@/store/artifacts-data/api-action";
+import { UploadArtifactData } from "@/types/artifacts-data";
 
 interface IFormProps {
-  title: string;
-  description: string;
-  file: File | null;
+  title: string
+  description: string
+  content: File | null
 }
 
 interface IFormArtifactProps {
@@ -17,33 +18,33 @@ const FormArtifact: FC<IFormArtifactProps> = ({ onClose }) => {
   const [formData, setFormData] = useState<IFormProps>({
     title: "",
     description: "",
-    file: null,
-  });
+    content: null,
+  })
 
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
+    const file = e.target.files?.[0] || null
     setFormData({
       ...formData,
-      file: file,
-    });
-  };
+      content: file,
+    })
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    await dispatch(createArtifact(formData as IPostArtifactData));
-    onClose();
-  };
+    await dispatch(createArtifact(formData as UploadArtifactData))
+    onClose()
+  }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
@@ -70,20 +71,20 @@ const FormArtifact: FC<IFormArtifactProps> = ({ onClose }) => {
       <div className={styles.inputFile}>
         <input
           type="file"
-          id="file"
-          name="file"
+          id="content"
+          name="content"
           onChange={handleFileChange}
         />
-        <label htmlFor="file">
+        <label htmlFor="content">
           <span>Загрузить файл</span>
         </label>
-        {formData.file && <span>{formData.file.name}</span>}
+        {formData.content && <span>{formData.content.name}</span>}
       </div>
       <div className={styles.btnSubmit}>
         <button type="submit">Создать</button>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default FormArtifact;
+export default FormArtifact
