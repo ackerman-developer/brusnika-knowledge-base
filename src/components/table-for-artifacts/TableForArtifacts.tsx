@@ -20,8 +20,15 @@ const TableForArtifacts = () => {
     navigate(`${AppRoute.ABOUT_ARTIFACT}/${id}`)
   }
 
-  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleDownloadClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, path: string) => {
     e.stopPropagation()
+    if (!path) {
+      return
+    }
+    const link = document.createElement('a')
+    link.href = `${import.meta.env.VITE_API_BASE_URL}/${path}`
+    link.download = ''
+    link.click()
   }
 
   return (
@@ -42,12 +49,13 @@ const TableForArtifacts = () => {
               <td>{item.description}</td>
               <td>{item.dateUpdate}</td>
               <td>
-                <a href={`https://158.160.97.74/${item.path}`} download onClick={handleDownloadClick}>
-                  <button className={styles.downloadButton}>
+                  <button
+                    className={styles.downloadButton}
+                    onClick={(e) => handleDownloadClick(e, item.path)}
+                  >
                     <DownloadFileIcon />
                     {item.fileName}
                   </button>
-                </a>
               </td>
             </tr>
           ))}
