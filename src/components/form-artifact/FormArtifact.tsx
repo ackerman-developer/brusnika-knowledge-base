@@ -3,6 +3,7 @@ import styles from "./FormArtifact.module.scss";
 import { useAppDispatch } from "@/hooks/redux-hooks";
 import { createArtifact } from "@/store/artifacts-data/api-action";
 import { UploadArtifactData } from "@/types/artifacts-data";
+import { DownLoadIcon } from "@/assets";
 
 interface IFormProps {
   title: string
@@ -75,7 +76,8 @@ const FormArtifact: FC<IFormArtifactProps> = ({ onClose }) => {
           name="content"
           onChange={handleFileChange}
         />
-        <label htmlFor="content">
+        <label htmlFor="content" className={styles.fileLabel}>
+          <DownLoadIcon />
           <span>Загрузить файл</span>
         </label>
         {formData.content && <span>{formData.content.name}</span>}

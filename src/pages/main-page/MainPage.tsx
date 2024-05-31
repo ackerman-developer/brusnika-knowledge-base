@@ -25,7 +25,6 @@ const MainPage = () => {
         <h1>Создать</h1>
         <button onClick={() => setIsModalOpen(true)}>Документ</button>
         <Link to={'/'}>Таблица</Link>
-        <Link to={'/'}>Формула</Link>
       </div>
       <div className={styles.component}>
         <h1>Популярное</h1>

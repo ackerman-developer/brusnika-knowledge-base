@@ -9,6 +9,8 @@ import {
   Formulas,
   AboutArtifact,
   AboutOffice,
+  Desing,
+  Tables,
 } from "@/pages";
 import { AppRoute } from "@/app/constants/AppRoute.ts";
 
@@ -32,6 +34,14 @@ const AppRouter = () => {
           <Route
             path={AppRoute.DESING_COMPONENTS}
             element={<DesingComponents />}
+          />
+          <Route
+            path={AppRoute.DESING_ICONS}
+            element={<Desing />}
+          />
+          <Route
+            path={AppRoute.TABLES}
+            element={<Tables />}
           />
           <Route
             path={AppRoute.FAQ}

@@ -5,6 +5,7 @@ export enum AppRoute {
   DESING_ICONS = '/icons',
   DESING_COLORS = '/colors',
   DESING_TYPOGRAPHY = '/typography',
+  TABLES = '/tables',
   TEMPLATES = '/templates',
   ADDRESS = '/address',
   ARTIFACT = '/documents',

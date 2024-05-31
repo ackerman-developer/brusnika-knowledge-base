@@ -26,15 +26,15 @@ const SideBar = () => {
           <ol className={styles.secondary_list}>
             <li><Link to={AppRoute.DESING_COMPONENTS} className={styles.secondary_link}>Компоненты</Link></li>
             <li><Link to={AppRoute.DESING_ICONS} className={styles.secondary_link}>Иконки</Link></li>
-            <li><Link to={AppRoute.DESING_COLORS} className={styles.secondary_link}>Цвета</Link></li>
-            <li><Link to={AppRoute.DESING_TYPOGRAPHY} className={styles.secondary_link}>Типографика</Link></li>
+            <li><Link to={AppRoute.DESING_ICONS} className={styles.secondary_link}>Цвета</Link></li>
+            <li><Link to={AppRoute.DESING_ICONS} className={styles.secondary_link}>Типографика</Link></li>
           </ol>
         </li>
         <li>
           <Link to={AppRoute.TEMPLATES} className={styles.main_link}><TemplateIcon />Шаблоны</Link>
           <ol className={styles.secondary_list}>
             <li><Link to={AppRoute.ARTIFACT} className={styles.secondary_link}>Документы</Link></li>
-            <li><Link to={AppRoute.MAIN} className={styles.secondary_link}>Таблицы</Link></li>
+            <li><Link to={AppRoute.TABLES} className={styles.secondary_link}>Таблицы</Link></li>
             <li><Link to={AppRoute.FORMULAS} className={styles.secondary_link}>Формулы</Link></li>
           </ol>
         </li>
