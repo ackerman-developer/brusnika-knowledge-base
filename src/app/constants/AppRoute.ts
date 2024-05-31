@@ -10,5 +10,6 @@ export enum AppRoute {
   ARTIFACT = '/documents',
   ABOUT_ARTIFACT = '/document',
   FAQ = '/questions',
-  FORMULAS = '/formulas'
+  FORMULAS = '/formulas',
+  ABOUT_OFFICE = '/office'
 }

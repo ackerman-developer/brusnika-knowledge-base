@@ -1,14 +1,14 @@
 import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Layout } from "@/components";
 import {
   MainPage,
-  NotFoundPage,
   Artifacts,
   DesingComponents,
   FAQ,
   Formulas,
   AboutArtifact,
+  AboutOffice,
 } from "@/pages";
 import { AppRoute } from "@/app/constants/AppRoute.ts";
 
@@ -42,8 +42,12 @@ const AppRouter = () => {
             element={<Formulas />}
           />
           <Route
+            path={AppRoute.ABOUT_OFFICE}
+            element={<AboutOffice />}
+          />
+          <Route
             path={AppRoute.NOT_FOUND}
-            element={<NotFoundPage />}
+            element={<Navigate to={AppRoute.MAIN} replace />}
           />
         </Route>
       </Routes>

@@ -5,6 +5,7 @@ import DesingComponents from "./desing/desing-components/DesingComponents.tsx";
 import FAQ from "./faq/FAQ.tsx";
 import Formulas from "./formulas/Formulas.tsx";
 import AboutArtifact from "./about-artifact/AboutArtifact.tsx";
+import AboutOffice from "./about-office/AboutOffice.tsx";
 
 export {
   MainPage,
@@ -14,4 +15,5 @@ export {
   FAQ,
   Formulas,
   AboutArtifact,
+  AboutOffice
 }
