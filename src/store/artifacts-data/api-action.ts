@@ -10,7 +10,7 @@ export interface IPostArtifactData {
   file: File
 }
 
-export const createArtifact = createAsyncThunk<ArtifactData, IPostArtifactData, {
+export const createArtifact = createAsyncThunk<IPostArtifactData, IPostArtifactData, {
   dispatch: AppDispatch
   state: RootState
   extra: AxiosInstance
@@ -22,7 +22,7 @@ export const createArtifact = createAsyncThunk<ArtifactData, IPostArtifactData, 
     formData.append('description', postData.description)
     formData.append('file', postData.file)
 
-    const { data } = await api.post<ArtifactData>(APIRoute.artifact, formData, {
+    const { data } = await api.post<IPostArtifactData>(APIRoute.artifact, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
