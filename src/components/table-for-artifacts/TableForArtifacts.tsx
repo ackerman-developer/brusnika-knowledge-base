@@ -31,11 +31,15 @@ const TableForArtifacts = () => {
     }
     const link = document.createElement('a')
     link.href = `${import.meta.env.VITE_API_STATIC_FILE}/${src}`
-    link.download = ''
     link.click()
   }
 
-
+  const limitDescriptionLength = (description: string, maxLength: number) => {
+    if (description.length > maxLength) {
+      return description.slice(0, maxLength) + '...'
+    }
+    return description
+  }
 
   return (
     <>
@@ -55,8 +59,8 @@ const TableForArtifacts = () => {
             {artifacts.map((item, index) => (
               <tr key={index} onClick={() => handleRowClick(item.id)} style={{cursor: "pointer"}}>
                 <td>{item.title}</td>
-                <td>{item.description}</td>
-                <td>{formatDate(item.dateUpdated)}</td>
+                <td>{limitDescriptionLength(item.description, 40)}</td>
+                <td>{formatDate(item.dateUpdate)}</td>
                 <td>
                     <button
                       className={styles.downloadButton}

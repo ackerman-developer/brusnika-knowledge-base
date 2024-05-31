@@ -45,3 +45,14 @@ export const fetchArtifactByID = createAsyncThunk<ArtifactData | undefined, { id
     return data
   },
 )
+
+export const deleteArtifactByID = createAsyncThunk<void, string, {
+  dispatch: AppDispatch
+  state: RootState
+  extra: AxiosInstance
+}>(
+  'data/deleteArtifactByID',
+  async (id, { extra: api }) => {
+    await api.delete(`${APIRoute.artifact}/${id}`)
+  }
+)

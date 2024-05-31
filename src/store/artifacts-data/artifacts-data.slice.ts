@@ -1,6 +1,6 @@
 import { ArtifactState } from "@/types/artifacts-data";
 import { createSlice } from "@reduxjs/toolkit";
-import { createArtifact, fetchArtifactByID, fetchArtifacts } from "./api-action";
+import { createArtifact, deleteArtifactByID, fetchArtifactByID, fetchArtifacts } from "./api-action";
 
 const initialState: ArtifactState = {
   artifacts: [],
@@ -32,6 +32,10 @@ export const artifactsData = createSlice({
       .addCase(fetchArtifactByID.fulfilled, (state, action) => {
         state.artifact = action.payload
         state.isArtfactDataLoading = false
+      })
+      .addCase(deleteArtifactByID.fulfilled, (state, action) => {
+        const deleteArtifactByID = action.meta.arg
+        state.artifacts = state.artifacts.filter(artifact => artifact.id !== deleteArtifactByID)
       })
   }
 })
