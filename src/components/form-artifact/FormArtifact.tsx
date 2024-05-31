@@ -1,12 +1,12 @@
-import { FC, useState } from "react"
-import styles from "./FormArtifact.module.scss"
-import { useAppDispatch } from "@/hooks/redux-hooks"
-import { IPostArtifactData, createArtifact } from "@/store/artifacts-data/api-action"
+import React, { FC, useState } from "react";
+import styles from "./FormArtifact.module.scss";
+import { useAppDispatch } from "@/hooks/redux-hooks";
+import { createArtifact, IPostArtifactData } from "@/store/artifacts-data/api-action";
 
 interface IFormProps {
-  title: string
-  description: string
-  file: File | null
+  title: string;
+  description: string;
+  file: File | null;
 }
 
 interface IFormArtifactProps {
@@ -15,37 +15,37 @@ interface IFormArtifactProps {
 
 const FormArtifact: FC<IFormArtifactProps> = ({ onClose }) => {
   const [formData, setFormData] = useState<IFormProps>({
-    title: '',
-    description: '',
+    title: "",
+    description: "",
     file: null,
-  })
+  });
 
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
     setFormData({
       ...formData,
       file: file,
-    })
-  }
+    });
+  };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    dispatch(createArtifact(formData as IPostArtifactData)).then(() => {
-      onClose()
-    })
-  }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  return(
+    await dispatch(createArtifact(formData as IPostArtifactData));
+    onClose();
+  };
+
+  return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.inputData}>
         <label htmlFor="title">Название</label>
@@ -83,7 +83,7 @@ const FormArtifact: FC<IFormArtifactProps> = ({ onClose }) => {
         <button type="submit">Создать</button>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default FormArtifact
+export default FormArtifact;

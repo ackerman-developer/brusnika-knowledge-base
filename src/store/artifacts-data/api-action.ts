@@ -15,7 +15,7 @@ export const createArtifact = createAsyncThunk<ArtifactData, IPostArtifactData, 
   state: RootState
   extra: AxiosInstance
 }>(
-  'artifactsData/postArtifact',
+  'artifactsData/createArtifact',
   async (postData, { extra: api }) => {
     const formData = new FormData()
     formData.append('title', postData.title)

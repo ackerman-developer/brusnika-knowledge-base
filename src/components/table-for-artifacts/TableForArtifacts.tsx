@@ -6,7 +6,7 @@ import { useEffect } from "react"
 import { DownloadFileIcon } from "@/assets"
 import { useNavigate } from "react-router-dom"
 import { AppRoute } from "@/app/constants/AppRoute"
-import Spinner from "../spinner/Spinner"
+import { Spinner } from "@/components"
 import useFormattedDate from "@/hooks/useFormattedDate"
 
 const TableForArtifacts = () => {
