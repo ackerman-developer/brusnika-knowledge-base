@@ -1,15 +1,17 @@
 import { useAppDispatch, useAppSelector } from "@/hooks/redux-hooks"
 import styles from "./TableForArtifacts.module.scss"
-import { getArtifacts } from "@/store/artifacts-data/artifacts-data.selectors"
+import { getArtifacts, getArtifactsDataLoadingStatus } from "@/store/artifacts-data/artifacts-data.selectors"
 import { fetchArtifacts } from "@/store/artifacts-data/api-action"
 import { useEffect } from "react"
 import { DownloadFileIcon } from "@/assets"
 import { useNavigate } from "react-router-dom"
 import { AppRoute } from "@/app/constants/AppRoute"
+import Spinner from "../spinner/Spinner"
 
 const TableForArtifacts = () => {
   const dispatch = useAppDispatch()
   const artifacts = useAppSelector(getArtifacts)
+  const artifactsLoading = useAppSelector(getArtifactsDataLoadingStatus)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -33,34 +35,38 @@ const TableForArtifacts = () => {
 
   return (
     <>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>Название</th>
-            <th>Описание</th>
-            <th>Дата изменения</th>
-            <th>Файл</th>
-          </tr>
-        </thead>
-        <tbody>
-          {artifacts.map((item, index) => (
-            <tr key={index} onClick={() => handleRowClick(item.id)}>
-              <td>{item.title}</td>
-              <td>{item.description}</td>
-              <td>{item.dateUpdate}</td>
-              <td>
-                  <button
-                    className={styles.downloadButton}
-                    onClick={(e) => handleDownloadClick(e, item.path)}
-                  >
-                    <DownloadFileIcon />
-                    {item.fileName}
-                  </button>
-              </td>
+      {artifactsLoading ? (
+        <Spinner />
+      ) : (
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>Название</th>
+              <th>Описание</th>
+              <th>Дата изменения</th>
+              <th>Файл</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {artifacts.map((item, index) => (
+              <tr key={index} onClick={() => handleRowClick(item.id)}>
+                <td>{item.title}</td>
+                <td>{item.description}</td>
+                <td>{item.dateUpdate}</td>
+                <td>
+                    <button
+                      className={styles.downloadButton}
+                      onClick={(e) => handleDownloadClick(e, item.path)}
+                    >
+                      <DownloadFileIcon />
+                      {item.fileName}
+                    </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </>
   )
 }

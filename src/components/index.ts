@@ -7,6 +7,7 @@ import FormArtifact from "./form-artifact/FormArtifact.tsx";
 import TableForFormulas from "./table-for-formulas/TableForFormulas.tsx";
 import TableForArtifacts from "./table-for-artifacts/TableForArtifacts.tsx";
 import Modal from "./modal/Modal.tsx";
+import Spinner from "./spinner/Spinner.tsx";
 
 export {
   Layout,
@@ -17,5 +18,6 @@ export {
   FormArtifact,
   TableForFormulas,
   TableForArtifacts,
-  Modal
+  Modal,
+  Spinner
 }
