@@ -9,4 +9,12 @@ export default defineConfig({
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
   },
   plugins: [react(), svgr()],
+  server: {
+    port: 3000,
+    watch:{
+      usePolling: true
+    },
+    host: true,
+    strictPort: true
+  }
 })
